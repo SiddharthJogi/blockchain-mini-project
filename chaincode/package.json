@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "fabric-chaincode-node start",
+    "start:server-nontls": "fabric-chaincode-node server --chaincode-address=$CHAINCODE_SERVER_ADDRESS --chaincode-id=$CHAINCODE_ID",
     "test": "node --test"
   },
   "keywords": [],

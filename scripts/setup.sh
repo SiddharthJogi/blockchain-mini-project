@@ -30,15 +30,15 @@ echo "==> Starting network and creating channel '$CHANNEL'"
 ./network.sh up createChannel -c "$CHANNEL"
 
 # Fabric's test-network scripts do not handle paths with spaces.
-# Stage the chaincode to a spaceless temporary directory before packaging.
-STAGE_DIR="/tmp/drug-traceability-chaincode"
+# Stage the chaincode to a spaceless directory in HOME before packaging.
+STAGE_DIR="$HOME/drug-chaincode-stage"
 rm -rf "$STAGE_DIR"
 mkdir -p "$STAGE_DIR"
 cp -r "$PROJECT_DIR/chaincode/." "$STAGE_DIR/"
 rm -rf "$STAGE_DIR/node_modules"
 
-echo "==> Deploying chaincode '$CHAINCODE' from $STAGE_DIR"
-./network.sh deployCC -c "$CHANNEL" -ccn "$CHAINCODE" -ccp "$STAGE_DIR" -ccl javascript
+echo "==> Deploying chaincode '$CHAINCODE' as a service from $STAGE_DIR"
+./network.sh deployCCAAS -c "$CHANNEL" -ccn "$CHAINCODE" -ccp "$STAGE_DIR"
 
 echo
 echo "Done. Next:"
