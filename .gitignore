@@ -1,0 +1,7 @@
+node_modules/
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+*.save
+.DS_Store

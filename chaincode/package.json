@@ -1,0 +1,18 @@
+{
+  "name": "drug-traceability-chaincode",
+  "version": "1.1.0",
+  "description": "Drug Traceability Blockchain Chaincode (Hyperledger Fabric)",
+  "main": "index.js",
+  "scripts": {
+    "start": "fabric-chaincode-node start",
+    "test": "node --test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "fabric-contract-api": "^2.5.8",
+    "fabric-shim": "^2.5.8"
+  }
+}
